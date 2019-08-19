@@ -98,7 +98,7 @@
      <layout>
        <updates>
           <shippingrates>
-            <file>codilar_homeservice.xml</file>
+            <file>codilar_shippingrates.xml</file>
           </shippingrates>
        </updates>
      </layout>
