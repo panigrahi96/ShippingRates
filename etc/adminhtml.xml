@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+<menu>
+	<shippingrates module="shippingrates">
+		<title>ShippingRates</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <categoryrate module="shippingrates">
+			<title>Category Rate</title>
+			<sort_order>0</sort_order>
+			<action>*/shippingrates</action>
+		  </categoryrate>
+		  <shippingzonerates module="shippingrates">
+			<title>Shipping Zone Rate</title>
+			<sort_order>1</sort_order>
+			<action>*/shippingzonerates</action>
+		  </shippingzonerates>
+		</children>
+	</shippingrates>
+</menu>
+<acl>
+	<resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<shippingrates translate="title" module="shippingrates">
+			  <title>ShippingRates</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		         <categoryratebackend translate="title">
+			       <title>Category Rate</title>
+			       <sort_order>1</sort_order>
+		         </categoryratebackend>
+		         <shippingzoneratesbackend translate="title">
+			       <title>Shipping Zone Rates</title>
+			       <sort_order>2</sort_order>
+		         </shippingzoneratesbackend>
+			  </children>
+			</shippingrates>
+		  </children>
+		</admin>
+	</resources>
+</acl>
+</config>
