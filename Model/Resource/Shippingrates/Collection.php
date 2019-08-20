@@ -5,6 +5,6 @@ class Codilar_ShippingRates_Model_Resource_Shippingrates_Collection extends Mage
       {
       	//Mage::log('collection shipping rates entry', null, 'model.log'); // Static text
          parent::_construct();
-        $this->_init('shippingsrates/categoryrate');
+        $this->_init('shippingrates/categoryrate');
       }
 }

@@ -53,6 +53,7 @@
          <class>Codilar_ShippingRates_Helper</class>
        </shippingrates>
     </helpers>
+   
   </global>
   <frontend>
   	<routers>
