@@ -22,6 +22,11 @@
             </shippingzonerates>  
           </entities>
       </shippingrates_resource>
+      <shipping>
+         <rewrite>
+              <carrier_flatrate>Codilar_ShippingRates_Model_Flatrate</carrier_flatrate>
+         </rewrite>
+       </shipping>
     </models>
     <resources>
        <shippingrates_setup>
