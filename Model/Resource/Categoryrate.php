@@ -1,5 +1,5 @@
 <?php
-class Codilar_ShippingRates_Model_Resource_Shippingrates extends Mage_Core_Model_Resource_Db_Abstract
+class Codilar_ShippingRates_Model_Resource_Categoryrate extends Mage_Core_Model_Resource_Db_Abstract
 {
    public function _construct()
    {

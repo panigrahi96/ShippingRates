@@ -15,9 +15,10 @@ class Codilar_ShippingRates_IndexController extends Mage_Core_Controller_Front_A
          Mage::log('My model shipping rates entry', null, 'ajax.log'); 
          $pin = $this->getRequest()->getParam('pincode');
          Mage::getSingleton('core/session')->setPincode($pin);
-//          $product = Mage::registry('current_product');
-// $id = $product->getId();
-// Mage::getSingleton('core/session')->setProduct_id_type($id);
+         Mage::log('18', null, 'ajax.log'); 
+         $producttype1 = $this->getRequest()->getParam('producttype');
+         Mage::getSingleton('core/session')->setProducttype($producttype1);
+      
      }
 
       

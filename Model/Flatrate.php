@@ -10,8 +10,10 @@ class Codilar_ShippingRates_Model_Flatrate
     public function collectRates(Mage_Shipping_Model_Rate_Request $request)
     {
         $var1= Mage::getSingleton('core/session')->getPincode();
-        // echo $var1;
-        // die;
+        $var2 = Mage::getSingleton('core/session')->getProducttype();
+         // print_r ($var2);
+         // die;
+        
         if (!$this->getConfigFlag('active')) 
         {
             return false;
@@ -43,6 +45,13 @@ class Codilar_ShippingRates_Model_Flatrate
             {
                 if (!$item->getFreeShipping()) 
                 {
+                   // $c="configurable";
+                  $producttype1 = Mage::getModel('shippingrates/categoryrate')->getCollection();
+                  $producttypedata = $producttype1->addFieldToSelect('*')->addFieldToFilter('product_type',$var2)->getData();
+                  foreach ($producttypedata as $productty) {
+                      $protype = $productty['rate'];
+                  }
+                   
                   $productList = Mage::getModel('shippingrates/shippingzonerates')->getCollection();
                   $productdata = $productList->addFieldToSelect('*')->addFieldToFilter('postcode',$var1)->getData();
                  foreach($productdata as $product) 
@@ -50,13 +59,20 @@ class Codilar_ShippingRates_Model_Flatrate
                     $quantity = $item->getQty();
                     // if ($product->getRate()) {
                     $product1 = $product['rate']; 
-                    $shippingPrice+=$product1 * $quantity;
-
+                   
                    //  } else {
                     //     $shippingPrice+=$this->getConfigData('price') * $quantity;
 
                     // }
                 }
+                if($protype>$product1){
+                    $shippingPrice+=$protype * $quantity;
+                }
+                else
+                {
+                    $shippingPrice+=$product1 * $quantity;
+                }
+
             }
 
         }
